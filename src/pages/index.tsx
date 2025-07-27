@@ -1,4 +1,5 @@
 import Navbar from "@/components/Navbar";
+import Hero from "@/components/sections/Hero";
 import { Inter } from "next/font/google";
 import { Playfair_Display } from "next/font/google";
 
@@ -15,6 +16,7 @@ export default function Home() {
   return (
     <main className={`${inter.className} ${playfair.variable}`}>
      <Navbar/>
+     <Hero/>
     </main>
   );
 }
