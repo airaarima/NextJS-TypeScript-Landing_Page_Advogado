@@ -1,5 +1,5 @@
 import React from "react";
-import { navLinks } from "../../constant/constant";
+import { navLinks } from "../constant/constant";
 import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
@@ -29,7 +29,10 @@ const Navbar = () => {
             {navLinks.map((link) => {
               return (
                 <Link href={link.url} key={link.id} className="">
-                  <p>{link.label}</p>
+                  <p className="relative group">
+                    <span>{link.label}</span>
+                    <span className="absolute -bottom-1 left-0 w-0 h-1 bg-[var(--color-accent)] transition-all group-hover:w-full rounded"></span>
+                    </p>
                 </Link>
               );
             })}
