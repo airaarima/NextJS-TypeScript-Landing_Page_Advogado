@@ -21,7 +21,7 @@ const MenuBar: React.FC<Props> = ({ navLinks }) => {
       <DropdownMenuContent
         side="bottom"
         align="end"
-        className="min-w-[180px] bg-[var(--color-primary)] text-[var(--color-text-primary)] mt-1 shadow-md rounded-md p-2 space-y-1 opacity-[.80]"
+        className="min-w-[180px] bg-[var(--color-primary)] text-[var(--color-text-primary)] mt-1 shadow-md rounded-md p-2 space-y-1"
       >
         {navLinks.map((link) => {
           return (
