@@ -1,3 +1,4 @@
+import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/sections/Hero";
 import { Inter } from "next/font/google";
@@ -10,13 +11,16 @@ const inter = Inter({
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
-  variable: "--font-playfair"
+  variable: "--font-playfair",
 });
 export default function Home() {
   return (
-    <main className={`${inter.className} ${playfair.variable}`}>
-     <Navbar/>
-     <Hero/>
-    </main>
+    <div className={`${inter.className} ${playfair.variable} min-h-screen flex flex-col`}>
+      <Navbar />
+      <main className="flex-1">
+        <Hero />
+      </main>
+      <Footer />
+    </div>
   );
 }
