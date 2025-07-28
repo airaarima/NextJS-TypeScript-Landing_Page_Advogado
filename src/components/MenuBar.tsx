@@ -6,15 +6,20 @@ import {
 } from "@radix-ui/react-dropdown-menu";
 import { AlignJustify } from "lucide-react";
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
 
 type Props = {
   navLinks: NavLink[];
 };
 
 const MenuBar: React.FC<Props> = ({ navLinks }) => {
+  const [open, setOpen] = useState(false);
+  const handleItemClick = () => {
+    setOpen(false);
+  };
+
   return (
-    <DropdownMenu>
+    <DropdownMenu open={open} onOpenChange={setOpen}>
       <DropdownMenuTrigger asChild>
         <AlignJustify className="hover:cursor-pointer" size={35} />
       </DropdownMenuTrigger>
@@ -22,10 +27,14 @@ const MenuBar: React.FC<Props> = ({ navLinks }) => {
         side="bottom"
         align="end"
         className="min-w-[180px] bg-[var(--color-primary)] text-[var(--color-text-primary)] mt-1 shadow-md rounded-md p-2 space-y-1"
+        onClick={handleItemClick}
       >
         {navLinks.map((link) => {
           return (
-            <DropdownMenuItem key={link.id} className="p-2 hover:bg-[var(--color-accent)] rounded-md focus:outline-none focus:ring-0">
+            <DropdownMenuItem
+              key={link.id}
+              className="p-2 hover:bg-[var(--color-accent)] rounded-md focus:outline-none focus:ring-0"
+            >
               <Link href={link.url} className="w-full text-center block">
                 <p>{link.label}</p>
               </Link>
