@@ -15,7 +15,7 @@ const Hero = () => {
           <h1 className="max-md:text-3xl text-4xl lg:text-5xl font-[--font-playfair] text-[var(--color-accent)]">
             Execelência e Ética
           </h1>
-          <p className="lg:text-xl max-md:text-center">
+          <p className="text-lg lg:text-xl max-md:text-center">
             Compromisso e especialização na defesa de direitos trabalhistas.
           </p>
         </div>

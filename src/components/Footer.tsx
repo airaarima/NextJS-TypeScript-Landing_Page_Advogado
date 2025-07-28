@@ -22,10 +22,10 @@ const Footer = () => {
 
         {/* 2ª coluna */}
         <div className="flex flex-col items-start space-y-1 justify-self-end max-md:justify-self-start">
-            <h3>Contato</h3>
+            <h3 className="font-bold">Contato</h3>
             <div className="flex justify-center space-x-2">
                 <Phone/>
-                <p>(51) 99342‑6635</p>
+                <p>(51) 99342-6635</p>
             </div>
             <div className="flex justify-center space-x-2">
                 <Mail/>
@@ -35,7 +35,7 @@ const Footer = () => {
 
         {/* 3ª coluna */}
         <div className="flex flex-col items-start space-y-1 justify-self-end max-md:justify-self-start">
-            <h3>Áreas de Atuação</h3>
+            <h3 className="font-bold">Áreas de Atuação</h3>
             <ul className="list-disc pl-4">
                 <li>Direito Civil</li>
                 <li>Direito Trabalhista</li>

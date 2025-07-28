@@ -28,7 +28,7 @@ const Navbar = () => {
           <div className="flex justify-center w-full items-center space-x-10 text-sm">
             {navLinks.map((link) => {
               return (
-                <Link href={link.url} key={link.id} className="">
+                <Link href={link.url} key={link.id} scroll={link.url !== "/"}>
                   <p className="relative group">
                     <span>{link.label}</span>
                     <span className="absolute -bottom-1 left-0 w-0 h-1 bg-[var(--color-accent)] transition-all group-hover:w-full rounded"></span>
