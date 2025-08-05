@@ -3,8 +3,8 @@ import React from "react";
 
 const About = () => {
   return (
-    <section id="about" className="mt-8 space-y-8 grid grid-cols-1 justify-center items-center w-full max-lg:pl-10 max-lg:pr-10 pl-20 pr-20 min-h-[40vh] xl:min-h-[50vh] bg-[var(--color-primary)] xl:grid-cols-2 text-[var(--color-text-primary)] pb-7">
-      <div className="space-y-4 mt-8">
+    <section id="about" className="mt-8 space-y-8 grid grid-cols-1 justify-center items-center w-full max-lg:pl-10 max-lg:pr-10 pl-20 pr-20 min-h-[40vh] xl:min-h-[50vh] bg-[var(--color-primary)] xl:grid-cols-2 text-[var(--color-text-primary)] pb-7 pt-8">
+      <div className="space-y-4">
         <h1 className="text-3xl max-lg:text-2xl">Sobre Dra. Mitiele Lopes</h1>
         <p className="text-xl max-lg:text-lg">
           Advogada formada pela UniRitter, com formação especializada em Gestão
