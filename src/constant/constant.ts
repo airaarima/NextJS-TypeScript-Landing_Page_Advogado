@@ -47,3 +47,20 @@ export const skills = [
         description: "Respostas rápidas e eficientes."
     }
 ]
+
+export const services = [
+    {
+        id: 1,
+        title: "Direito Civil",
+        description: "Contratos, responsabilidade civil, direitos reais e obrigações.",
+        icon: "/services/direito-civil.png",
+        services: ["Contratos em geral", "Indenizações"]
+    },
+    {
+        id: 2,
+        title: "Direito Trabalhista",
+        description: "Defesa em processos trabalhistas e consultoria preventiva.",
+        icon: "/services/direito-trabalhista.png",
+        services: ["Processos trabalhistas", "Consultoria preventiva", "Rescisões"]
+    }
+]
