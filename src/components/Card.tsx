@@ -6,7 +6,7 @@ type Props = {
 
 const Card: React.FC<Props> = ({ infos }) => {
   return (
-    <div className="flex flex-col justify-center bg-[var(--color-tertiary)] p-3 rounded-lg shadow-md space-y-5 lg:space-y-8 w-full sm:w-3/4 lg:w-auto" key={infos.id}>
+    <div className="flex flex-col justify-center bg-[var(--color-tertiary)] p-3 rounded-lg shadow-md space-y-5 lg:space-y-8 w-full sm:w-3/4 lg:w-auto">
       <div className="flex items-center gap-3">
         <img src={infos.icon} alt="" />
         <h3 className="text-xl max-lg:text-lg text">{infos.title}</h3>

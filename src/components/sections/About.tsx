@@ -22,7 +22,7 @@ const About = () => {
               <img src={skill.image} alt="" className="w-10 h-12 object-contain flex-shrink-0"/>
               <div>
                 <h3 className="text-xl max-lg:text-lg">{skill.title}</h3>
-                <p>{skill.description}</p>
+                <p className="max-sm:text-start">{skill.description}</p>
               </div>
             </li>
           );

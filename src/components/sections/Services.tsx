@@ -13,7 +13,7 @@ const Services = () => {
         <h3 className="text-3xl text-[var(--color-accent)] max-lg:text-2xl">
           Áreas de Atuação
         </h3>
-        <p className="text-xl max-lg:text-lg text-center max-sm:text-justify">
+        <p className="text-xl max-lg:text-lg text-center">
           Oferecemos serviços jurídicos especializados com foco no atendimento humanizado e soluções práticas. Conhecimento atualizado e dedicação total ao seu caso.
         </p>
       </div>
@@ -21,7 +21,7 @@ const Services = () => {
       {/* Cards serviços */}
       <div className="flex flex-col lg:flex-row gap-5 justify-center items-center">
         {services.map((service) => {
-          return <Card infos={service}/>;
+          return <Card infos={service} key={service.id}/>;
         })}
       </div>
     </section>
