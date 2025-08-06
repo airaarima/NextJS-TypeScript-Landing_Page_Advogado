@@ -1,6 +1,6 @@
 import { services } from "@/constant/constant";
 import React from "react";
-import Card from "../Card";
+import CardService from "../CardService";
 
 const Services = () => {
   return (
@@ -21,7 +21,7 @@ const Services = () => {
       {/* Cards serviços */}
       <div className="flex flex-col lg:flex-row gap-5 justify-center items-center">
         {services.map((service) => {
-          return <Card infos={service} key={service.id}/>;
+          return <CardService infos={service} key={service.id}/>;
         })}
       </div>
     </section>
