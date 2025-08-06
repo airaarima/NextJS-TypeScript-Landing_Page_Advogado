@@ -64,3 +64,22 @@ export const services = [
         services: ["Processos trabalhistas", "Consultoria preventiva", "Rescisões"]
     }
 ]
+
+export const contactInfo = [
+    {
+        id: 1,
+        type: "phone",
+        title: "Telefone e WhatsApp",
+        subtitle: "(51) 99342‑6635",
+        description: "Seg à Sex: 9h às 18h",
+        textButton: "Atendimento imediato"
+    },
+    {
+        id: 2,
+        type: "email",
+        title: "E-mail",
+        subtitle: "mitiele.adv@gmail.com",
+        description: "Resposta em até 24h",
+        textButton: "Consulta gratuita"
+    }
+]

@@ -12,12 +12,7 @@ const Navbar = () => {
         {/* Logo */}
         <div className="flex items-center flex-none">
           <div className="relative w-12 h-12 max-lg:w-10 max-lg:h-10">
-            <Image
-              src="/navbar/law.png"
-              alt="Logo icon"
-              fill
-              aria-hidden
-            />
+            <Image src="/navbar/law.png" alt="Logo icon" fill aria-hidden />
           </div>
           <h1 className="ml-[10px] text-2xl font-[--font-playfair] font-semibold max-lg:text-xl">
             Dra. Mitiele Lopes
@@ -32,13 +27,15 @@ const Navbar = () => {
                   <p className="relative group">
                     <span>{link.label}</span>
                     <span className="absolute -bottom-1 left-0 w-0 h-1 bg-[var(--color-accent)] transition-all group-hover:w-full rounded"></span>
-                    </p>
+                  </p>
                 </Link>
               );
             })}
           </div>
           {/* Button */}
-          <Button variant="outline">Consulta Gratuita</Button>
+          <Button variant="outline">
+            <a href="#contact">Consulta Gratuita</a>
+          </Button>
         </div>
         {/* Menu Mobile*/}
         <div className="hidden max-lg:flex">

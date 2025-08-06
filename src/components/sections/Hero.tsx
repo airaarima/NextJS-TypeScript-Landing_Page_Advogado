@@ -24,7 +24,7 @@ const Hero = () => {
         <div className="flex justify-center md:space-x-6 max-md:space-x-2">
           <Button variant="outline" className="max-sm:w-[145px] w-[168px] max-sm:text-xs bg-[var(--color-accent-dark)]">
             <Phone/>
-            Consulta Gratuita
+            <a href="#contact">Consulta Gratuita</a>
             </Button>
           <Button className="max-sm:w-[145px] w-[168px] max-sm:text-xs bg-[var(--color-accent-dark)] hover:cursor-pointer">
             <Image
