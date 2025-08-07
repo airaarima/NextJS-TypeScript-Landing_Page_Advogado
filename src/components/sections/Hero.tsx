@@ -5,17 +5,17 @@ import Image from "next/image";
 
 const Hero = () => {
   return (
-    <section id="home" className="mt-4 flex justify-center md:justify-between w-full max-lg:pl-10 max-lg:pr-10 pl-20 pr-20 min-h-[30vh] lg:min-h-[40vh]">
+    <section id="home" className="mt-4 flex justify-center xl:justify-between w-full max-lg:pl-10 max-lg:pr-10 pl-20 pr-20 max-sm:min-h-[30vh] min-h-[20vh] lg:min-h-[30vh]">
       <div className="flex flex-col justify-center md:pr-4">
         {/* Info */}
-        <div className="h-full flex flex-col justify-center max-md:items-center">
+        <div className="h-full xl:w-full flex flex-col justify-center max-xl:items-center">
           <h1 className="max-md:text-3xl  text-4xl lg:text-5xl font-[--font-playfair]">
             Advocacia com
           </h1>
           <h1 className="max-md:text-3xl text-4xl lg:text-5xl font-[--font-playfair] text-[var(--color-accent)]">
             Execelência e Ética
           </h1>
-          <p className="text-lg lg:text-xl max-md:text-center">
+          <p className="text-lg lg:text-xl max-xl:text-center">
             Compromisso e especialização na defesa de direitos trabalhistas.
           </p>
         </div>
@@ -40,7 +40,7 @@ const Hero = () => {
       </div>
 
       {/* Imagem */}
-      <div className="max-md:hidden self-center">
+      <div className="max-xl:hidden self-center">
         <img src="/hero/adv.png" alt="Foto de perfil" className="rounded" />
       </div>
     </section>
