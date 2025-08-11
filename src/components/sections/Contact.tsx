@@ -5,7 +5,7 @@ import Form from "../Form";
 
 const Contact = () => {
   return (
-    <div
+    <section
       id="contact"
       className="bg-[var(--color-primary)] space-y-8 justify-between items-center w-full max-lg:pl-10 max-lg:pr-10 pl-20 pr-20 text-[var(--color-text-primary)] pb-7 pt-8"
     >
@@ -27,7 +27,7 @@ const Contact = () => {
           return <CardContact key={contact.id} contact={contact} />;
         })}
       </div>
-    </div>
+    </section>
   );
 };
 

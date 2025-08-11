@@ -5,4 +5,5 @@ type Contact = {
   subtitle: string;
   description: string;
   textButton: string;
+  link: string;
 };
