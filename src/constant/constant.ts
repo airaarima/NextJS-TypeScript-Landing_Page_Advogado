@@ -1,3 +1,5 @@
+import { link } from "fs"
+
 export const navLinks = [
     {
         id: 1,
@@ -24,24 +26,18 @@ export const navLinks = [
 export const skills = [
     {
         id: 1,
-        image: "/about/formacao.png",
-        title: "Formação Sólida",
-        description: "Formada pela UniRitter."
-    },
-    {
-        id: 2,
         image: "/about/atendimento.png",
         title: "Atendimento Personalizado",
         description: "Relacionamento direto e pessoal."
     },
     {
-        id: 3,
+        id: 2,
         image: "/about/etica-profissional.png",
         title: "Ética Profissional",
         description: "Transparência em todos os processos."
     },
     {
-        id: 4,
+        id: 3,
         image: "/about/agilidade.png",
         title: "Agilidade",
         description: "Respostas rápidas e eficientes."
@@ -72,7 +68,8 @@ export const contactInfo = [
         title: "Telefone e WhatsApp",
         subtitle: "(51) 99342‑6635",
         description: "Seg à Sex: 9h às 18h",
-        textButton: "Atendimento imediato"
+        textButton: "Atendimento imediato",
+        link: "https://wa.me/5551993426635?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20um%20hor%C3%A1rio%20para%20conversarmos%20sobre%20meu%20caso%21"
     },
     {
         id: 2,
@@ -80,6 +77,7 @@ export const contactInfo = [
         title: "E-mail",
         subtitle: "mitiele.adv@gmail.com",
         description: "Resposta em até 24h",
-        textButton: "Consulta gratuita"
+        textButton: "Consulta gratuita",
+        link: ""
     }
 ]
