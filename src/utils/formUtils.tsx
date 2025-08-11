@@ -1,0 +1,28 @@
+export const validateEmail = (email: string): boolean => {
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return emailRegex.test(email);
+};
+
+export const validatePhone = (phone: string): boolean => {
+  const cleanPhone = phone.replace(/\D/g, "");
+  return cleanPhone.length >= 10 && cleanPhone.length <= 11;
+};
+
+export const formatPhone = (value: string): string => {
+  const numbers = value.replace(/\D/g, "");
+
+  if (numbers.length <= 2) {
+    return `(${numbers}`;
+  } else if (numbers.length <= 6) {
+    return `(${numbers.slice(0, 2)}) ${numbers.slice(2)}`;
+  } else if (numbers.length <= 10) {
+    return `(${numbers.slice(0, 2)}) ${numbers.slice(2, 6)}-${numbers.slice(
+      6
+    )}`;
+  } else {
+    return `(${numbers.slice(0, 2)}) ${numbers.slice(2, 7)}-${numbers.slice(
+      7,
+      11
+    )}`;
+  }
+};
