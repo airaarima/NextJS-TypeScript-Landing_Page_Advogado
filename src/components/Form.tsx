@@ -1,10 +1,13 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { Button } from "./ui/button";
 import { CheckCircle, Send, X } from "lucide-react";
 import { FormErrors } from "@/types/FormErrors";
 import { formatPhone, validateEmail, validatePhone } from "@/utils/formUtils";
+import emailjs from "@emailjs/browser";
 
 const Form = () => {
+  const formRef = useRef<HTMLFormElement>(null);
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -74,6 +77,27 @@ const Form = () => {
     return Object.keys(newErrors).length === 0;
   };
 
+  const sendEmail = async (): Promise<boolean> => {
+    if (!formRef.current) return false;
+
+    try {
+      const result = await emailjs.sendForm(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
+        formRef.current,
+        {
+          publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!,
+        }
+      );
+
+      console.log("Email enviado com sucesso!", result.text);
+      return true;
+    } catch (error: any) {
+      console.error("Erro ao enviar email:", error.text || error);
+      return false;
+    }
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
@@ -81,28 +105,27 @@ const Form = () => {
       setIsSubmitting(true);
 
       try {
-        // TODO: Implementar o envio do email
-        await new Promise((resolve) => setTimeout(resolve, 1500));
+        const emailSent = await sendEmail();
 
-        console.log("Form submitted:", formData);
+        if (emailSent) {
+          // Limpa o formulário
+          setFormData({
+            name: "",
+            email: "",
+            phone: "",
+            subject: "",
+            message: "",
+          });
+          setErrors({});
 
-        // Limpa o formulário
-        setFormData({
-          name: "",
-          email: "",
-          phone: "",
-          subject: "",
-          message: "",
-        });
-        setErrors({});
+          // Mostra mensagem de sucesso
+          setShowSuccessMessage(true);
 
-        // Mostra mensagem de sucesso
-        setShowSuccessMessage(true);
-
-        // Remove a mensagem após 5 segundos
-        setTimeout(() => {
-          setShowSuccessMessage(false);
-        }, 5000);
+          // Remove a mensagem após 5 segundos
+          setTimeout(() => {
+            setShowSuccessMessage(false);
+          }, 5000);
+        }
       } catch (error) {
         console.error("Erro ao enviar formulário:", error);
       } finally {
@@ -172,6 +195,7 @@ const Form = () => {
         </div>
       )}
       <form
+        ref={formRef}
         onSubmit={handleSubmit}
         className="flex flex-col xl:h-full space-y-6 bg-[var(--color-secondary)] p-5 rounded-md w-full"
       >
@@ -185,6 +209,7 @@ const Form = () => {
             </label>
             <input
               id="name"
+              name="user_name"
               type="text"
               value={formData.name}
               onChange={(e) => handleInputChange("name", e.target.value)}
@@ -202,6 +227,7 @@ const Form = () => {
             </label>
             <input
               id="phone"
+              name="user_phone"
               type="tel"
               value={formData.phone}
               onChange={(e) => handlePhoneChange(e.target.value)}
@@ -219,6 +245,7 @@ const Form = () => {
           </label>
           <input
             id="email"
+            name="user_email"
             type="email"
             value={formData.email}
             onChange={(e) => handleInputChange("email", e.target.value)}
@@ -235,6 +262,7 @@ const Form = () => {
           </label>
           <input
             id="subject"
+            name="subject"
             type="text"
             value={formData.subject}
             onChange={(e) => handleInputChange("subject", e.target.value)}
@@ -255,6 +283,7 @@ const Form = () => {
           </label>
           <textarea
             id="message"
+            name="message"
             rows={5}
             value={formData.message}
             onChange={(e) => handleInputChange("message", e.target.value)}
