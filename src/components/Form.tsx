@@ -92,8 +92,7 @@ const Form = () => {
 
       console.log("Email enviado com sucesso!", result.text);
       return true;
-    } catch (error: any) {
-      console.error("Erro ao enviar email:", error.text || error);
+    } catch (error) {
       return false;
     }
   };
